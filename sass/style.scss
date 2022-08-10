@@ -1,0 +1,23 @@
+.fondo-nav{
+    background-color: rgb(80, 80, 79);
+}
+.fondo-footer{
+    background-color: darkgrey;
+}
+.contactenos{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+@media (min-width:768px){
+    .fondo-nav {
+        background-color: rgb(228, 81, 81);
+    }
+    nav ul li a:hover{
+        font-size: 25px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        
+    } 
+    
+
+    
+}
