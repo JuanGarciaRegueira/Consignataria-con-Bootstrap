@@ -1,0 +1,19 @@
+@mixin parrafo1 {
+    color:rgb(242, 32, 32)
+}
+p{
+    @include parrafo1;
+}
+.box1{
+    border-left: solid $border/10;
+    border-color: $bordeColor;
+}
+.parrafito{
+    font-weight: 700;
+}
+.titulo1{
+    @extend .parrafito;
+    color: rgb(228, 81, 81);
+    margin-top: 1em;
+    
+}

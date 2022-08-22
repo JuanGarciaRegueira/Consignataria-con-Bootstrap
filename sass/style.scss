@@ -1,6 +1,6 @@
 @import "variableGlobal";
 @import "generales";
-@import "parrafo";
+@import "index";
 
 
 
@@ -20,4 +20,15 @@
     
 
     
+}
+
+
+
+@mixin fondoColor{
+    background-color: rgb(245, 213, 196);
+    padding: $border
+    
+}
+.contacto{
+    @include fondoColor;
 }

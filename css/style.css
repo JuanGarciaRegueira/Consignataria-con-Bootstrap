@@ -6,6 +6,24 @@
   background-color: darkgrey;
 }
 
+p {
+  color: rgb(242, 32, 32);
+}
+
+.box1 {
+  border-left: solid 5px;
+  border-color: black;
+}
+
+.parrafito, .titulo1 {
+  font-weight: 700;
+}
+
+.titulo1 {
+  color: rgb(228, 81, 81);
+  margin-top: 1em;
+}
+
 .contactenos {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
@@ -18,4 +36,8 @@
     font-size: 25px;
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   }
+}
+.contacto {
+  background-color: rgb(245, 213, 196);
+  padding: 50px;
 }/*# sourceMappingURL=style.css.map */
