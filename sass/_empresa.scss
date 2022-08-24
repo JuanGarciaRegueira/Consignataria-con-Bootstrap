@@ -1,0 +1,17 @@
+.block-title {
+    display: inline-block;
+    position: relative;
+    margin: 25px auto;
+    padding: 25px;
+    border-bottom:solid $border/10 ;
+    border-color: brown;
+}
+.g-col-6 {
+    padding: 40px;
+    p{
+        color: black;
+        background-color: darkgrey;
+        font-size: 20px;
+        
+    }
+}

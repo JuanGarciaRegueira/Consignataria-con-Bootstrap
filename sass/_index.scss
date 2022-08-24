@@ -1,5 +1,5 @@
 @mixin parrafo1 {
-    color:rgb(242, 32, 32)
+    color:rgb(34, 16, 16)
 }
 p{
     @include parrafo1;
@@ -9,6 +9,8 @@ p{
     border-color: $bordeColor;
 }
 .parrafito{
+    color: black;
+    background: none;
     font-weight: 700;
 }
 .titulo1{

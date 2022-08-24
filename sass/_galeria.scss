@@ -1,0 +1,9 @@
+.parrafoGaleria{
+    color: rgb(255, 255, 255);
+}
+p, h5{
+    background-color: black;
+    @extend .parrafoGaleria
+    
+
+}

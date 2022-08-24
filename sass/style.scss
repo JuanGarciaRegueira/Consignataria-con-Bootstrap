@@ -1,12 +1,17 @@
+@import "fuentes";
 @import "variableGlobal";
 @import "generales";
 @import "index";
+@import "ubicacion";
+@import "galeria";
+@import "empresa";
 
 
 
-.contactenos{
+h1, h2, h3, h4{
     font-family: 'Oswald', sans-serif;
 }
+
 
 @media (min-width:768px){
     .fondo-nav {
@@ -25,7 +30,7 @@
 
 
 @mixin fondoColor{
-    background-color: rgb(245, 213, 196);
+    background-color: rgb(202, 200, 199);
     padding: $border
     
 }
