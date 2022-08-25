@@ -83,6 +83,10 @@ div h2 {
   border-color: brown;
 }
 
+body {
+  background: linear-gradient(90deg, rgb(227, 227, 227) 0%, rgb(71, 23, 3) 100%);
+}
+
 h1, h2, h3, h4 {
   font-family: "Oswald", sans-serif;
 }
