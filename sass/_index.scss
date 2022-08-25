@@ -12,10 +12,16 @@ p{
     color: black;
     background: none;
     font-weight: 700;
+    line-height: 30px;
 }
 .titulo1{
     @extend .parrafito;
-    color: rgb(228, 81, 81);
-    margin-top: 1em;
+    color: rgb(0, 0, 0);
+    display: inline-block;
+    position: relative;
+    margin: 25px auto;
+    padding: 25px;
+    border-bottom:solid $border/10 ;
+    border-color: brown;
     
 }

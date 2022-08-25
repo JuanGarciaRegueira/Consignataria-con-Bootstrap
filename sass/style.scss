@@ -5,6 +5,7 @@
 @import "ubicacion";
 @import "galeria";
 @import "empresa";
+@import "contacto";
 
 
 
@@ -29,11 +30,4 @@ h1, h2, h3, h4{
 
 
 
-@mixin fondoColor{
-    background-color: rgb(202, 200, 199);
-    padding: $border
-    
-}
-.contacto{
-    @include fondoColor;
-}
+

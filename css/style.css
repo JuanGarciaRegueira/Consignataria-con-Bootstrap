@@ -20,11 +20,17 @@ p {
   color: black;
   background: none;
   font-weight: 700;
+  line-height: 30px;
 }
 
 .titulo1, .encontrarnos {
-  color: rgb(228, 81, 81);
-  margin-top: 1em;
+  color: rgb(0, 0, 0);
+  display: inline-block;
+  position: relative;
+  margin: 25px auto;
+  padding: 25px;
+  border-bottom: solid 5px;
+  border-color: brown;
 }
 
 .parrafoGaleria, p, h5 {
@@ -33,6 +39,15 @@ p {
 
 p, h5 {
   background-color: black;
+}
+
+div h2 {
+  display: inline-block;
+  position: relative;
+  margin: 25px auto;
+  padding: 25px;
+  border-bottom: solid 5px;
+  border-color: brown;
 }
 
 .block-title {
@@ -51,6 +66,21 @@ p, h5 {
   color: black;
   background-color: darkgrey;
   font-size: 20px;
+  line-height: 30px;
+}
+
+.contacto {
+  background-color: rgb(202, 200, 199);
+  padding: 50px;
+}
+
+.contacto1 {
+  display: inline-block;
+  position: relative;
+  margin: 25px auto;
+  padding: 25px;
+  border-bottom: solid 5px;
+  border-color: brown;
 }
 
 h1, h2, h3, h4 {
@@ -65,8 +95,4 @@ h1, h2, h3, h4 {
     font-size: 25px;
     font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   }
-}
-.contacto {
-  background-color: rgb(202, 200, 199);
-  padding: 50px;
 }/*# sourceMappingURL=style.css.map */

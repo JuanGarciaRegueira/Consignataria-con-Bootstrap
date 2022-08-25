@@ -1,17 +1,18 @@
-.parrafoGaleria{
-    color: rgb(255, 255, 255);
-}
-p, h5{
-    background-color: black;
-    @extend .parrafoGaleria
+@mixin fondoColor{
+    background-color: rgb(202, 200, 199);
+    padding: $border
     
-
 }
-div h2{
+.contacto{
+    @include fondoColor;
+}
+
+.contacto1{
     display: inline-block;
     position: relative;
     margin: 25px auto;
     padding: 25px;
     border-bottom:solid $border/10 ;
     border-color: brown;
+
 }
