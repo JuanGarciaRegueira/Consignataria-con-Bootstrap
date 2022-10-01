@@ -27,6 +27,15 @@ let precioTotal = 0
 
 alert( "estos son los lotes a vender: \n - Vacas\n - Toros")
 
+
+//Ciclo de compra
+
+function precio(cantidad, precio){
+    precioTotal += (cantidad * precio)
+
+}
+
+
 let cantidadCompra = prompt("Que cantidad de lotes desea comprar:")
 
 for(let i = 0; i < cantidadCompra; i = i + 1){
@@ -39,7 +48,8 @@ let loteCompra = prompt(" Ingrese que lote quiere comprar: \n1 - Vacas\n2- Toros
 if (loteCompra.toLowerCase() == 'vacas'){
     let cantidadLoteA = prompt("ingrese que cantidad de " + nombreLoteA + " desea comprar:")
     if(cantidadLoteA <= stockLoteA){
-     precioTotal = precioTotal + (cantidadLoteA * precioLoteA)
+        precio(cantidadLoteA, precioLoteA)
+     
     }
     else{alert("Actualmente tenemos " + stockLoteA + " Vacas")}
     
@@ -48,7 +58,7 @@ if (loteCompra.toLowerCase() == 'vacas'){
 else if(loteCompra.toLowerCase() == 'toros'){
     let cantidadLoteB = prompt("ingrese que cantidad de " + nombreLoteB + " desea comprar:")
     if(cantidadLoteB <= stockLoteB){
-    precioTotal = precioTotal + (cantidadLoteB * precioLoteB)
+        precio(cantidadLoteB, precioLoteB)
     }
     else{alert("Actualmente tenemos " + stockLoteB + " Toros")}
     
@@ -77,6 +87,14 @@ if (texto == "SI") {
 else {
     alert("Lo esperamos para mas Lotes")
 }
+
+function proximamente (categoriaA, categoriaB) {
+    alert( "Proximamente ingresaran  " + categoriaA + " y " + categoriaB)
+}
+
+proximamente("Vaquillonas", "Novillitos")
+proximamente("Terneros","Terneras")
+
 
 
 
