@@ -8,35 +8,92 @@ while(saludo != "Hola" && saludo != "hola"){
 
 alert("Bienvenido");
 
+/*  
+let LoteA = {
+    nombre: "Vacas",
+    precio: 180000,
+    stock: 200,
+}
+let LoteB = {
+    nombre: "Toros",
+    precio: 500000,
+    stock: 50,
+}
+*/
+
+/* for(const Lote of listaLotes){
+    if(Lote.stock > 0){
+        listaCategoria.push(Lote.categoria)
+
+    }
+    
+} */
+
+function Lote(categoria, precio, stock){
+   this.categoria = categoria;
+   this.precio = precio;
+   this.stock = stock || 0; 
+   this.restarStock = function(cantidad){
+        this.stock -= cantidad
+    }
+}
+
+let loteA = new Lote("Vacas", 180000, 200)
+let loteB = new Lote("Toros", 500000, 50)
+let loteC = new Lote("Vaquillonas", 100000, 0)
+let loteD = new Lote("Novillitos", 90000, 0)
+
+let listaLotes = [loteA, loteB, loteC, loteD]
+
+let listaLotesConSTock = listaLotes.filter((lote) => lote.stock > 0)
+
+let listaCategoria = listaLotesConSTock.map((lote) => lote.categoria)
 
 
-let nombreLoteA = "Vacas"
-let precioLoteA = 150000
-let stockLoteA = 100
 
-console.log(nombreLoteA)
 
-let nombreLoteB = "Toros"
-let precioLoteB = 300000
-let stockLoteB = 50
 
-console.log(nombreLoteB)
+for(const detalle in loteA){
+    console.log(loteA[detalle])
+}
+
+for(const detalle in loteB){
+    console.log(loteB[detalle])
+}
+
+
+console.log(loteA)
+console.log(loteB)
+
 
 let precioTotal = 0
 
 
-alert( "estos son los lotes a vender: \n - Vacas\n - Toros")
+alert( "estos son los lotes a vender: \n - " + listaCategoria.join("\n - "))
 
 
 //Ciclo de compra
 
-function precio(cantidad, precio){
+function calculoPrecio(cantidad, precio){
     precioTotal += (cantidad * precio)
 
 }
 
 
-let cantidadCompra = prompt("Que cantidad de lotes desea comprar:")
+function calculoStock(cantidad, stock, precio){
+    if(cantidad <= stock){
+        calculoPrecio(cantidad, precio)
+     
+    }
+    else{
+        alert("Actualmente tenemos " + stock + " de esta categoria")
+    }
+
+
+}
+
+
+let cantidadCompra = parseInt(prompt("Que cantidad de lotes desea comprar:"))
 
 for(let i = 0; i < cantidadCompra; i = i + 1){
 
@@ -46,21 +103,17 @@ let loteCompra = prompt(" Ingrese que lote quiere comprar: \n1 - Vacas\n2- Toros
 
 
 if (loteCompra.toLowerCase() == 'vacas'){
-    let cantidadLoteA = prompt("ingrese que cantidad de " + nombreLoteA + " desea comprar:")
-    if(cantidadLoteA <= stockLoteA){
-        precio(cantidadLoteA, precioLoteA)
-     
-    }
-    else{alert("Actualmente tenemos " + stockLoteA + " Vacas")}
+    let cantidadLoteA = prompt("ingrese que cantidad de " + loteA.categoria + " desea comprar:")
+    calculoStock(cantidadLoteA, loteA.stock, loteA.precio)
+    loteA.restarStock(cantidadLoteA)
+    
     
 
 }
 else if(loteCompra.toLowerCase() == 'toros'){
-    let cantidadLoteB = prompt("ingrese que cantidad de " + nombreLoteB + " desea comprar:")
-    if(cantidadLoteB <= stockLoteB){
-        precio(cantidadLoteB, precioLoteB)
-    }
-    else{alert("Actualmente tenemos " + stockLoteB + " Toros")}
+    let cantidadLoteB = prompt("ingrese que cantidad de " + loteB.categoria + " desea comprar:")
+    calculoStock(cantidadLoteB, loteB.stock, loteB.precio)
+    loteB.restarStock(cantidadLoteB)
     
     
 }
