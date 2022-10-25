@@ -54,6 +54,11 @@ div h2 {
   border-color: brown;
 }
 
+#catalogo {
+  background-color: aliceblue;
+  height: 100px;
+}
+
 .block-title {
   display: inline-block;
   position: relative;

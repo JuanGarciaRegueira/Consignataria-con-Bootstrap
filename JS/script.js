@@ -1,12 +1,9 @@
-let i = 0;
+/* let nombre = prompt("ingrese su nombre: ")
 
+let catalogo = document.getElementById("catalogo")
 
-while(saludo != "Hola" && saludo != "hola"){
-    var saludo = prompt("Salude con un Hola para ingresar");
-    i++;
-}
-
-alert("Bienvenido");
+catalogo.innerText = "Bienvenido " + nombre
+console.log(catalogo.innerText) */
 
 /*  
 let LoteA = {
@@ -29,19 +26,29 @@ let LoteB = {
     
 } */
 
-function Lote(categoria, precio, stock){
+
+
+
+
+
+
+
+
+function Lote(categoria, precio, stock, clase, img){
    this.categoria = categoria;
    this.precio = precio;
-   this.stock = stock || 0; 
+   this.stock = stock || 0;
+   this.clase = clase
+   this.img = img; 
    this.restarStock = function(cantidad){
         this.stock -= cantidad
     }
 }
 
-let loteA = new Lote("Vacas", 180000, 200)
-let loteB = new Lote("Toros", 500000, 50)
-let loteC = new Lote("Vaquillonas", 100000, 0)
-let loteD = new Lote("Novillitos", 90000, 0)
+let loteA = new Lote("Vacas", 180000, 200, "hembras", "..//imagenes/fotoVacas.jpg")
+let loteB = new Lote("Toros", 500000, 50, "machos", "..//imagenes/toros.jpg")
+let loteC = new Lote("Vaquillonas", 100000, 0, "hembras")
+let loteD = new Lote("Novillitos", 90000, 0, "machos")
 
 let listaLotes = [loteA, loteB, loteC, loteD]
 
@@ -51,25 +58,61 @@ let listaCategoria = listaLotesConSTock.map((lote) => lote.categoria)
 
 
 
-
-
-for(const detalle in loteA){
-    console.log(loteA[detalle])
-}
-
-for(const detalle in loteB){
-    console.log(loteB[detalle])
-}
-
-
-console.log(loteA)
-console.log(loteB)
-
-
 let precioTotal = 0
 
 
-alert( "estos son los lotes a vender: \n - " + listaCategoria.join("\n - "))
+
+let catalogo = document.getElementById("catalogo")
+
+function render(lista){
+
+    catalogo.innerHTML = ""
+
+    for(const lote of lista){
+
+        let card = document.createElement("div")
+
+        card.className = "card"
+
+        card.innerHTML = `<h2>${lote.categoria}</h2><p>Precio: $${lote.precio}</p><img width="560" height="315" src="${lote.img}">`
+
+        
+
+        catalogo.append(card)
+
+
+    }
+}
+render(listaLotesConSTock)
+
+let claseElegida = ''
+
+let clases = document.getElementById("clases")
+clases.addEventListener("change", ()=>{claseElegida = clases.value})
+
+let botonFiltro = document.getElementById("filtrar")
+botonFiltro.addEventListener("click", filtro)
+
+
+function filtro(){
+    let filtroActual = listaLotes.filter((lote)=>lote.clase == claseElegida)
+    render(filtroActual)
+}
+
+let botonAll = document.getElementById("all")
+
+botonAll.addEventListener("click", ()=>{render(listaLotesConSTock)})
+
+
+localStorage.setItem("Lote", JSON.stringify (listaLotes))
+
+let valor = JSON.parse(localStorage.getItem("Lote"))
+
+console.log(valor)
+
+
+
+/* alert( "estos son los lotes a vender: \n - " + listaCategoria.join("\n - "))
 
 
 //Ciclo de compra
@@ -147,7 +190,7 @@ function proximamente (categoriaA, categoriaB) {
 
 proximamente("Vaquillonas", "Novillitos")
 proximamente("Terneros","Terneras")
-
+ */
 
 
 
